@@ -7,6 +7,7 @@ import { Movies } from './componest/movies'
 
 
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Tittle/>, <FiltrosByGenre/>, <Movies/>
