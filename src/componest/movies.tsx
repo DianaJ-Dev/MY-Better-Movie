@@ -11,19 +11,20 @@ interface Movie { //
 
 export const Movies = () => {
 
-    const [movie, setMovie] = useState<Movie[]>([])
+    const [movie, setMovie] = useState<Movie[]>([]) // Actualiza el valor de estado Movie
+
     const initialUrl = 'https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=en-US&api_key=a96958b664d1a603a39c9d2064867790'
     const icludeImage = 'https://image.tmdb.org/t/p/w200/'
     
     const movieFetch =(url: string)=>{
      fetch(url)
-          .then(response => response.json())
+          .then(response => response.json()) // convierte respuesta en formato JSON
           .then(data => setMovie(data.results))
           .catch(err => console.error(err))
      }
 
     useEffect (()=>{
-     movieFetch(initialUrl);
+     movieFetch(initialUrl); // realiza solicitud  HTTP a la url inicial
     }, [])
 
     return (
