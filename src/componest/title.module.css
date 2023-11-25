@@ -1,0 +1,12 @@
+h1{
+    background-color: #DB9E21;
+    color: #FFFFFF;
+    font-family: 'Abril Fatface',;
+    font-size: 400%;
+    padding: 1%;
+    margin: 3%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+  
+  }
