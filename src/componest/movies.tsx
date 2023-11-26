@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import './movies.module.css';
+import { useState, useEffect } from "react";
+import styles from './movies.module.css';
 import ReactPaginate from 'react-paginate';
 
 
@@ -12,30 +12,34 @@ interface Movie {
 }
 
 export const Movies = () => {
-  // tRAER PELICULAS API
-  const [movies, setMovies] = useState<Movie[]>([]); // Actualiza el valor de estado Movie
+  // TRAER PELICULAS API
+  const [movies, setMovies] = useState<Movie[]>([]); // Actualiza el valor de estado Movie (desestructuración)
   const initialUrl = 'https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=en-US&api_key=a96958b664d1a603a39c9d2064867790';
-  const includeImage = 'https://image.tmdb.org/t/p/w200/';
-
-  const movieFetch = (url: string) => {
-    fetch(url)
-      .then(response => response.json()) // convierte respuesta en formato JSON
-      .then(data => setMovies(data.results))
-      .catch(err => console.error(err));
-  };
+  const includeImage = 'https://image.tmdb.org/t/p/w200/'
 
   useEffect(() => {
-    movieFetch(initialUrl); // realiza solicitud  HTTP a la url inicial
-  }, []);
+    const fetchMovies = async () => {
+      const promises = [];
+      for (let page = 1; page <= 100; page++) {
+        const url = `${initialUrl}&page=${page}`
+        promises.push(fetch(url).then(response => response.json()))
+      }
+      const results = await Promise.all(promises)
+      const allMovies = results.flatMap(result => result.results)
+      setMovies(allMovies);
+    };
+
+    fetchMovies();
+  }, [initialUrl])
 
   // PAGINAR
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(0);
   const [currentPageData, setCurrentPageData] = useState<Movie[]>([])
   const offset = currentPage * itemsPerPage;
 
   useEffect(() => {
-    const dataToDisplay = movies.slice(offset, offset + itemsPerPage)
+    const dataToDisplay = movies.slice(offset, offset + itemsPerPage) // slice devuelve una copia de un array
     setCurrentPageData(dataToDisplay) // Actualiza el valor del estado de (currentPageDate)
   }, [movies, offset, itemsPerPage])
 
@@ -44,26 +48,26 @@ export const Movies = () => {
   };
 
   return (
-    <aside>
+    <aside className={styles.container}>
       {currentPageData.map((item, index) => (
-        <header key={index}>
-          <h4>{item.title}</h4>
-          <img src={includeImage + item.poster_path} alt={item.title} />
-          <h4>{item.release_date}</h4>
+        <header className={styles.card} key={index}>
+          <h4 className = {styles.tittle}>{item.title}</h4>
+          <img className = {styles.img} src={includeImage + item.poster_path} alt={item.title} />
+          <h4 className = {styles.tittle}>{item.release_date}</h4>
         </header>
       ))}
       {/* Paginación */}
       <ReactPaginate
-        previousLabel={'Anterior'}
-        nextLabel={'Siguiente'}
+        previousLabel={'Back'} 
+        nextLabel={'After'}
         breakLabel={'...'}
-        pageCount={Math.ceil(movies.length / itemsPerPage)}
-        marginPagesDisplayed={2}
+        pageCount={Math.ceil(movies.length / itemsPerPage)} //devuelve el entero Mayor o igual al numero proximo
+        marginPagesDisplayed={1}
         pageRangeDisplayed={5}
         onPageChange={handlePageClick}
-        containerClassName={'pagination'}
-        activeClassName={'active'}
+        containerClassName={styles.pagination}
+        activeClassName={styles.active}
       />
     </aside>
-  );
-};
+  )
+}
