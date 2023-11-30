@@ -1,4 +1,4 @@
-aside {
+.movies {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;;
@@ -9,7 +9,7 @@ aside {
   
 }
 
-header {
+.card {
   text-align: center;
   margin : 17px;
   padding: 1px;
