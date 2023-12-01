@@ -11,19 +11,18 @@ interface Movie {
 
 interface PaginationProps {
   movies: Movie[];
-  setCurrentPage: (pageNumber: number) => void;
+  setCurrentPage: (pageNumber: number) => void; // void quiere decir que no trae ningun valor 
   selected: number;
-  
+
 }
 
 export const ShowPaginated = ({ setCurrentPage }: PaginationProps) => {
-  const handlePageClick = (selectedPage: {selected:number }) => {
-    setCurrentPage(selectedPage.selected + 1)
-  }
+  const handlePageClick = (selectedPage: { selected: number }) => {
+    setCurrentPage(selectedPage.selected + 1);
+  };
 
   return (
     <aside className={styles.container}>
-      
       {/* Paginación */}
       <ReactPaginate
         previousLabel={"Back"}

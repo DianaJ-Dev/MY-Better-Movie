@@ -1,38 +1,44 @@
-    import React from 'react';
-    import { render, waitFor} from '@testing-library/react';
-    import { Movies, ShowPaginated } from '../../src/components/movies';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
+import React from "react";
+import { render, waitFor, screen } from "@testing-library/react";
+import { Movies } from "../../src/components/movies";
+import "@testing-library/jest-dom";
 
-    // Simulamos fetch
-    global.fetch = jest.fn(() => // (global) accede a variables globales de js 
-    Promise.resolve({
-      json: () => Promise.resolve({ results: [{ title: 'Movie 1' }, { title: 'Movie 2' }] })
-    } as Response)
-  );
-  
-  describe('Movies', () => {
-    it('Debe mostrarme las primeras 100 peliculas', async () => {
-      render(<Movies />);
-      
-      await waitFor(() => {
-        expect(global.fetch).toHaveBeenCalledTimes(100); 
-      })
-    })
-  })
+declare const global: any;
 
+const mockMoviesData = [
+  { title: "Movie 1", poster_path: "/movie1.jpg", release_date: "2022-01-01" },
+  { title: "Movie 2", poster_path: "/movie2.jpg", release_date: "2022-02-01" },
+];
 
-  describe('ShowPaginated', () => {
-    it('Debe retornar nombre de pelicula, imagen y fecha', ()  =>{
-      const movie ={
-        title: 'Leo',
-        imag:'https://image.tmdb.org/t/p/w200',
-        date:'2023-11-17',
-        poster_path: '/ruta/al/poster.jpg',
-        release_date: '2023-11-17'
-      }
-      ShowPaginated([movie]);
-  
-      expect(ShowPaginated).toHaveBeenCalledWith(movie)
-      })
+// Simulamos fetch
+global.fetch = jest.fn(() => // (global) accede a variables globales de js
+  Promise.resolve({
+    json: () => Promise.resolve({ results: mockMoviesData }),
+  } as Response)
+);
 
-    })
+describe("Movies", () => {
+  it("Debe llamar de manera correcta la api", async () => {
+    render(<Movies />);
+
+    // waitFor espera a que se cumpla la condicion de global.fetch
+    await waitFor(() => {
+      expect(global.fetch).toHaveBeenCalled();
+
+    });
+  });
+  it("Renderiza correctamente la información de la película", async () => {
+    render(<Movies />);
+
+    await screen.findByText("Movie 1");
+
+    mockMoviesData.forEach((item) => { //itera sobre cada elemento del array
+      expect(screen.getByText(item.title)).toBeInTheDocument();
+      expect(screen.getByAltText(item.title)).toBeInTheDocument();
+      expect(screen.getByText(item.release_date)).toBeInTheDocument();
+    });
+  });
+});
+

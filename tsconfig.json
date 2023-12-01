@@ -6,6 +6,9 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "jsx": "react",
+    "types": ["jest"],
+    
     
 
     /* Bundler mode */
@@ -14,7 +17,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
     "esModuleInterop": true,
 
     /* Linting */
@@ -24,5 +26,6 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src", "test"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "types": ["vite/client", "jest", "@types/testing-library__jest-dom"],
+  
 }
