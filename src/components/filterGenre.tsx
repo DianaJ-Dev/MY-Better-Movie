@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const byGenres = [
   { "id": 0, "name": "All" },
@@ -6,14 +6,14 @@ const byGenres = [
   { "id": 12, "name": "Adventure" },
   { "id": 16, "name": "Animation" },
   { "id": 35, "name": "Comedy" },
-  { "id": 80, "name": "Crime" },
+  { "id": 80, "name": "Crime" }
 ];
 
-export const FiltersGenre = ({ movies, onGenreChange }) => {
-  const [selectedGenre, setSelectedGenre] = useState(0);
+export const FiltersGenre = ({ movies, onGenreChange, setSelectedGenre, selectedGenre }) => {
+  
 
   const handleGenreChange = (event) => {
-    const selectedGenreId = parseInt(event.target.value);
+    const selectedGenreId = parseInt(event.target.value); //(parseInt) convierte cadena en numero
     setSelectedGenre(selectedGenreId);
     
     const filteredMovies = selectedGenreId === 0
