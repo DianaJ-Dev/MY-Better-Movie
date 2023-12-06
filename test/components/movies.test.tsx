@@ -2,8 +2,9 @@
 
 import React from "react";
 import { render, waitFor, screen } from "@testing-library/react";
-import { Movies } from "../../src/components/movies";
 import "@testing-library/jest-dom";
+import { Movies } from "../../src/movies";
+
 
 declare const global: any;
 
