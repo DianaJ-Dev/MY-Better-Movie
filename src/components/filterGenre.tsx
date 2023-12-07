@@ -9,12 +9,27 @@ const byGenres = [
   { "id": 80, "name": "Crime" }
 ];
 
-export const FiltersGenre = ({ movies, onGenreChange, setSelectedGenre, selectedGenre }) => {
+interface Movie {
+  title: string;
+  poster_path: string;
+  release_date: string;
+  genre_ids:number
+}
+interface GenreProps {
+  movies: Movie[];
+  onGenreChange: () => void
+  setSelectedGenre: (genre: string) => void;
+  selectedGenre:string
+ 
+
+}
+
+export const FiltersGenre = ({ movies,  onGenreChange, setSelectedGenre, selectedGenre }: GenreProps) => {
   
 
   const handleGenreChange = (event) => {
     const selectedGenreId = parseInt(event.target.value); //(parseInt) convierte cadena en numero
-    setSelectedGenre(selectedGenreId);
+    setSelectedGenre(selectedGenreId)
     
     const filteredMovies = selectedGenreId === 0
       ? movies
