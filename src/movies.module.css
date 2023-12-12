@@ -1,7 +1,7 @@
 :root {
   background-color: #16395C;
 }
-
+/* titulo*/
 h1{
   background-color: #DB9E21;
   color: #FFFFFF;
@@ -15,6 +15,7 @@ h1{
 
 }
 
+/* container peliculas*/
 .movies {
   display: flex;
   justify-content: space-around;
@@ -23,6 +24,8 @@ h1{
   margin: 3%;
   background-color: #555;
   border-radius: 5px;
+  height: auto;
+  
   
 }
 
@@ -35,6 +38,7 @@ h1{
   background-color: #f9f9f9;
   width: 15%;
   border-radius: 5px;
+
   
 }
 
@@ -69,3 +73,27 @@ img{
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
+/* Botones de filtro y orden*/
+.buttonContainer{
+    display: flex;
+    margin-left: 5px;
+}  
+
+.button{
+  background-color: #DB9E21;
+  position: relative;
+  top: -20px;
+  padding: 8px;
+  border-radius: 8px;
+  
+}
+
+.titulouno{
+  position: relative;
+  top: -20px;
+  color: aliceblue;
+  margin-left: 50px;
+  font-size: 18px;
+
+} 

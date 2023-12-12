@@ -7,6 +7,7 @@ interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
+  genre_id:number
 }
 
 interface PaginationProps {

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from "../movies.module.css"
 
 const byGenres = [
   { "id": 0, "name": "All" },
@@ -13,33 +14,33 @@ interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
-  genre_ids:number
+  genre_id:number;
+  id:number
 }
 interface GenreProps {
   movies: Movie[];
-  onGenreChange: () => void
-  setSelectedGenre: (genre: string) => void;
-  selectedGenre:string
- 
-
+  onGenreChange: (filteredMovies: Movie[]) => void;
+  setSelectedGenre: (genre: string | null) => void;
+  selectedGenre?: string | null ;
 }
 
 export const FiltersGenre = ({ movies,  onGenreChange, setSelectedGenre, selectedGenre }: GenreProps) => {
   
 
-  const handleGenreChange = (event) => {
+  const handleGenreChange = (event: React.ChangeEvent<HTMLSelectElement>) => { 
     const selectedGenreId = parseInt(event.target.value); //(parseInt) convierte cadena en numero
-    setSelectedGenre(selectedGenreId)
+    setSelectedGenre(selectedGenreId.toString()) // (toString()) convierte valores numericos en string
     
     const filteredMovies = selectedGenreId === 0
       ? movies
-      : movies.filter(movie => movie.genre_ids.includes(selectedGenreId));
+      : movies.filter(movie => movie.genre_id === selectedGenreId);
     onGenreChange(filteredMovies);
   }
 
   return (
     <div>
-      <select value={selectedGenre} onChange={handleGenreChange}>
+      <label className={styles.titulouno}>Filter by gender:  </label>
+      <select className={styles.button} value={selectedGenre || ''} onChange={handleGenreChange} aria-label="Select Genre">
         {byGenres.map(genre => (
           <option key={genre.id} value={genre.id}>{genre.name}</option>
         ))}
