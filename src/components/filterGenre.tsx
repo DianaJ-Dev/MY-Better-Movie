@@ -27,7 +27,7 @@ interface GenreProps {
 export const FiltersGenre = ({ movies,  onGenreChange, setSelectedGenre, selectedGenre }: GenreProps) => {
   
 
-  const handleGenreChange = (event: React.ChangeEvent<HTMLSelectElement>) => { 
+  const handleGenreChange = (event: React.ChangeEvent<HTMLSelectElement>) => { // se ejecuta cuando cambia el valor de select
     const selectedGenreId = parseInt(event.target.value); //(parseInt) convierte cadena en numero
     setSelectedGenre(selectedGenreId.toString()) // (toString()) convierte valores numericos en string
     

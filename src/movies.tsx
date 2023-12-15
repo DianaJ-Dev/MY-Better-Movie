@@ -4,6 +4,7 @@ import styles from "./movies.module.css";
 import { MovieItem } from "./components/movieItem";
 import { FiltersGenre } from "./components/filterGenre";
 import {AlphabeticOrder} from "./components/alphabeticOrder"
+import { MovieDetail } from "./components/movieDetail";
 
 
 // Interfaz TypeScript que describe la estructura de objetos
@@ -21,7 +22,8 @@ export const Movies = () => {
   const [currentPage, setCurrentPage] = useState(1); // Actualiza el valor de las paginas
   const [selectedGenre, setSelectedGenre] = useState<string | undefined | null>();
   const [selectOrder, setSelectOrder] = useState<string>();
-  
+  const [detailMovies, setDetailMovies] = useState()
+
   
   const handleGenreChange = (filteredMovies: Movie[] )  => {
     setMovies(filteredMovies);
@@ -38,7 +40,7 @@ export const Movies = () => {
     const initialUrl = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&with_genres=${with_genres}&api_key=a96958b664d1a603a39c9d2064867790`;
 
     fetch(initialUrl)
-      .then((response) => response.json())
+      .then((response) => response.json()) //Convierte los datos en un objecto de js
       .then((data: { results: Movie[] }) => 
       
       setMovies(order== 'asc'?
@@ -49,15 +51,23 @@ export const Movies = () => {
 
   // Nueva solicitud cada  vez que cambia la pelicula
   useEffect(() => {
-    
+    console.log(detailMovies)
     movieFetch(currentPage,selectedGenre,selectOrder);
-  }, [currentPage,selectedGenre, selectOrder, movies]);
+  }, [currentPage,selectedGenre, selectOrder, movies,detailMovies]);
+  
 
 
   return (
     <div >
       <h1> My Better Movie</h1>
+      <MovieDetail
+      movies={movies}
+      setDetailMovies={setDetailMovies}
+      detailMovies={detailMovies}
+      />
+      
       <div className={styles.buttonContainer}>
+      
       <FiltersGenre
         movies={movies}
         onGenreChange={handleGenreChange}
@@ -72,7 +82,7 @@ export const Movies = () => {
       />
       </div>
   
-      <div className={styles.movies}>
+      <div className={styles.movies} data-testid="movies-component">
         {movies.map((movie) => (
           <MovieItem
             key={movie.id}

@@ -11,7 +11,7 @@ interface Movie {
   id: number;
 }
 
-const byGenres: Movie[] = [
+export const byGenres: Movie[] = [
   { id: 0, title: "All", poster_path: "", release_date: "", genre_id: 0 },
   { id: 1, title: "Action", poster_path: "", release_date: "", genre_id: 28 },
   { id: 2, title: "Adventure", poster_path: "", release_date: "", genre_id: 12 },
@@ -30,6 +30,7 @@ describe("FiltersGenre", () => {
     )
 
     expect(getByText('All')).toBeInTheDocument()
+    // (getByLabelText) selecciona un elemento que tiene una etiqueta especifica 
     fireEvent.change(getByLabelText('Select Genre'), { target: { value: '28' } })
     expect(setSelectedGenre).toHaveBeenCalledWith('28') 
 

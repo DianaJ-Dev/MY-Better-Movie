@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { AlphabeticOrder } from "../../src/components/alphabeticOrder";
 
@@ -21,18 +21,29 @@ const orderAlphabetic: Movie[] = [
 
 describe("alphabetiOrder", () => {
   it("debería mostrar películas en orden alfabético ascendente", () => {
-    const onOrderChange = jest.fn();
+
+    const onOrderChange = jest.fn(); //funciones simuladas 
     const setSelectOrder = jest.fn();
 
     render(
       <AlphabeticOrder movies={orderAlphabetic} onOrderChange={onOrderChange} selectOrder="asc" setSelectOrder={setSelectOrder} />
     );
+    //(fireEvent) simula el cambio en un elemento
+    fireEvent.change(screen.getByRole("combobox"), { target: { value: "desc" } }); // ("combobox") se refiere a un elemento de select
+    
+    //(toHaveBeenCalledWith) se usa para validar si una funcion ha sido llamada como argumento
+    expect(onOrderChange).toHaveBeenCalledWith(
+      orderAlphabetic.sort((b, a) => a.title.localeCompare(b.title)
+      )
+    )
 
+    fireEvent.change(screen.getByRole("combobox"), { target: { value: "asc" } });
+    expect(onOrderChange).toHaveBeenCalledWith(
+      orderAlphabetic.sort((a,b) => a.title.localeCompare(b.title)
+      )
+    )
 
-    expect(screen.getByText("A Man of Reason")).toBeInTheDocument();
-    expect(screen.getByText("Believer 2")).toBeInTheDocument();
-    expect(screen.getByText("Creed III")).toBeInTheDocument();
-    expect(screen.getByText("Fast X")).toBeInTheDocument();
-    expect(screen.getByText("Godzilla")).toBeInTheDocument();
+    
+
   });
 });
