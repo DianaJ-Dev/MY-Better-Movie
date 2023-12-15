@@ -1,5 +1,5 @@
 import ReactPaginate from "react-paginate";
-import styles from "./movies.module.css";
+import styles from "../movies.module.css"
 import React from "react";
 
 //Interfaz TypeScript que describe la estructura de objetos
@@ -7,6 +7,7 @@ interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
+  genre_id:number
 }
 
 interface PaginationProps {
