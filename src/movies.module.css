@@ -29,17 +29,27 @@ h1{
   
 }
 
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  
+}
+
 .card {
   text-align: center;
-  margin : 17px;
-  padding: 1px;
-  border: 1px solid #ddd;
+  margin-left:  px;
+  padding: 10px; 
+  border: 10px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
-  width: 15%;
-  border-radius: 5px;
+  width: 10%; 
+  min-width: 200px; 
+  box-sizing: border-box;
+} 
 
-  
+.card img {
+  max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
 }
 
 h4 {
