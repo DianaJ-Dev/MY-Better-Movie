@@ -107,29 +107,35 @@ h1{
 .tittleDetail{
   color: #111111;
   font-size: 30px;
-  margin-top: -40px;
-  margin-left: -0px;
-  text-align: center;
+  margin-top: -490px;
+  margin-left: 300px;
 }
 .containerDetail{ 
   background: #D9D9D9;
-  padding: 5%;
-  display: flex;
+  padding: 20px;
+  width: 190%;
+  border-radius: 10px;
   justify-content: space-around;
-  flex-wrap: wrap;
-  margin-left: 30%; 
-  margin-top: -35%;
-  width: 60%;
-  
+  position: relative;
+
 }
 .imgDetail{
-  margin-left: 20px;
-  border: 10px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9; 
-  min-width: 300px; 
+  padding: -20px;
+  border: 10px solid #f0f2f4;
+  border-radius: 5px; 
+  min-width: 250px; 
   box-sizing: border-box;
-  height: 400px;
-  max-width: 200px;
-  margin-top: -10px;
+  height: 350px;
+  margin-left: 10px;
+  margin-bottom: 180px;
+
 }
+.info{
+  margin-left: 300px;
+
+}
+.p{
+  margin-left: 300px;
+
+}
+

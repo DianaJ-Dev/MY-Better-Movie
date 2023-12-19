@@ -39,22 +39,22 @@ export const MovieDetail: React.FC<MovieDetailProps> = ({ movies }) => {
   const selectGenre = byGenres.find((genre) => detail.genre_ids.includes(genre.id))
 
   return (
-    <div >
+    <div className={styles.containerDetail} >
       <button className={styles.back} onClick={handleGoBack}>Back</button>
       <img className={styles.imgDetail} src={includeImage + detail.poster_path} alt={detail.title} />
-      <div className={styles.containerDetail} >
-      <h4 className={styles.tittleDetail}>{detail.title}</h4>  
-      <h4>Fecha de lanzamiento: {detail.release_date}</h4>
       <div>
+      <h4 className={styles.tittleDetail}>{detail.title}</h4>  
+      <h4 className={styles.info}>Fecha de lanzamiento: {detail.release_date}</h4>
+      <div className={styles.info}>
         {selectGenre ? (
           <h4>Genero de película: {selectGenre.name}</h4>
         ) : (
           <p>No se encontró genero</p>
         )}
       </div>
-      <p>{detail.overview}</p>
-      <h4>Promedio de Votación: {detail.vote_average}</h4>
-      <h4>Total de Votos: {detail.vote_count}</h4>
+      <p className={styles.p}>{detail.overview}</p>
+      <h4 className={styles.info}>Promedio de Votación: {detail.vote_average}</h4>
+      <h4 className={styles.info}>Total de Votos: {detail.vote_count}</h4>
       </div>
     </div>
   )
