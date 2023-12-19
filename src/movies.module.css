@@ -19,26 +19,15 @@ h1{
 .movies {
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;;
   flex-wrap: wrap;
   margin: 3%;
   background-color: #555;
   border-radius: 5px;
-  height: auto;
-  
-  
-}
-
-.card-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  
+  padding: 2%;
 }
 
 .card {
   text-align: center;
-  margin-left:  px;
   padding: 10px; 
   border: 10px solid #ddd;
   border-radius: 5px;
@@ -46,23 +35,23 @@ h1{
   width: 10%; 
   min-width: 200px; 
   box-sizing: border-box;
+  margin-bottom: 30px;
+  height: 330px;
+  max-width: 200px;
 } 
-
 .card img {
-  max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
-}
-
-h4 {
-  font-size: auto;
-  margin:5px;  
-}
-
-img{
+  height: auto; 
   width: 100%;
-  height: 100%;
+}
+.tittle{
+ overflow: hidden;
+ text-overflow: ellipsis; /* Agrega puntos suspensivos (...) si el texto es demasiado largo */
+ white-space: nowrap;     /* Evita que el título se envuelva a la siguiente línea */
+ margin-bottom: 10px;
+ margin-top: 1px;
 }
 
-
+/*paginacion*/
 .pagination{
     display: flex;
     list-style: none;
@@ -70,7 +59,6 @@ img{
     margin: 20px 
 
 }
-
 .active{
   background-color: #DB9E21;
   color: #fff;
@@ -93,7 +81,7 @@ img{
 .button{
   background-color: #DB9E21;
   position: relative;
-  top: -20px;
+  top: -5px;
   padding: 8px;
   border-radius: 8px;
   
@@ -101,9 +89,47 @@ img{
 
 .titulouno{
   position: relative;
-  top: -20px;
+  top: -5px;
   color: aliceblue;
   margin-left: 50px;
   font-size: 18px;
 
 } 
+
+/*detalle de pelicula*/
+.back{
+  background-color: #DB9E21;
+  margin-left: 87%;
+  width: 150px;
+  height: 30px;
+  
+}
+.tittleDetail{
+  color: #111111;
+  font-size: 30px;
+  margin-top: -40px;
+  margin-left: -0px;
+  text-align: center;
+}
+.containerDetail{ 
+  background: #D9D9D9;
+  padding: 5%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 30%; 
+  margin-top: -35%;
+  width: 60%;
+  
+}
+.imgDetail{
+  margin-left: 20px;
+  border: 10px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9; 
+  min-width: 300px; 
+  box-sizing: border-box;
+  height: 400px;
+  max-width: 200px;
+  margin-top: -10px;
+}

@@ -8,24 +8,17 @@ import { MovieDetail } from "./pages/movieDetail";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
-// Interfaz TypeScript que describe la estructura de objetos
-interface Movie {
-  title: string;
-  poster_path: string;
-  release_date: string;
-  genre_id:number;
-  id:number;
-
-}
+// Interfaz TypeScript que describe la estructura de objeto
 
 interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
-  genre_id:number;
+  genre_ids:number;
   id:number
   vote_average:number;
   vote_count:number;
+  overview:string
 
 }
 
@@ -64,7 +57,7 @@ export const Movies = () => {
   // Nueva solicitud cada  vez que cambia la pelicula
   useEffect(() => {
     movieFetch(currentPage,selectedGenre,selectOrder);
-  }, [currentPage,selectedGenre, selectOrder, movies]);
+  }, [currentPage,selectedGenre, selectOrder]);
   
 
 
