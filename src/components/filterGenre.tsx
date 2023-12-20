@@ -15,13 +15,13 @@ interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
-  genre_ids:number;
-  id:number
-  vote_average:number;
-  vote_count:number;
-  overview:string
-
+  genre_ids: number[];
+  id: number;
+  vote_average: number;
+  vote_count: number;
+  overview: string;
 }
+
 interface GenreProps {
   movies: Movie[];
   onGenreChange: (filteredMovies: Movie[]) => void;
@@ -38,7 +38,7 @@ export const FiltersGenre = ({ movies,  onGenreChange, setSelectedGenre, selecte
     
     const filteredMovies = selectedGenreId === 0
       ? movies
-      : movies.filter(movie => movie.genre_ids === selectedGenreId);
+      : movies.filter(movie => movie.genre_ids.includes(selectedGenreId));
     onGenreChange(filteredMovies);
   }
 
