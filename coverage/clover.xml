@@ -2,6 +2,7 @@
 <coverage generated="1703101584438" clover="3.2.0">
   <project timestamp="1703101584439" name="All files">
     <metrics statements="80" coveredstatements="67" conditionals="12" coveredconditionals="7" methods="25" coveredmethods="18" elements="117" coveredelements="92" complexity="0" loc="80" ncloc="80" packages="3" files="6" classes="6"/>
+
     <package name="src">
       <metrics statements="29" coveredstatements="26" conditionals="3" coveredconditionals="1" methods="10" coveredmethods="7"/>
       <file name="movies.tsx" path="C:\Users\Asus\Documents\Laboratoria\Proyecto 5\My-Better-Movie\src\movies.tsx">
@@ -39,6 +40,7 @@
     </package>
     <package name="src.components">
       <metrics statements="36" coveredstatements="36" conditionals="6" coveredconditionals="6" methods="11" coveredmethods="11"/>
+
       <file name="alphabeticOrder.tsx" path="C:\Users\Asus\Documents\Laboratoria\Proyecto 5\My-Better-Movie\src\components\alphabeticOrder.tsx">
         <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
         <line num="1" count="2" type="stmt"/>
