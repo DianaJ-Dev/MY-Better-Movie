@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "../movies.module.css"
 
 
-export const byGenres = [
+const byGenres = [
   { "id": 0, "name": "All" },
   { "id": 28, "name": "Action" },
   { "id": 12, "name": "Adventure" },
@@ -15,12 +15,11 @@ interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
-  genre_ids:number;
+  genre_ids:number[];
   id:number
   vote_average:number;
   vote_count:number;
-  overview:string
-
+  overview:string 
 }
 interface GenreProps {
   movies: Movie[];
@@ -38,7 +37,7 @@ export const FiltersGenre = ({ movies,  onGenreChange, setSelectedGenre, selecte
     
     const filteredMovies = selectedGenreId === 0
       ? movies
-      : movies.filter(movie => movie.genre_ids === selectedGenreId);
+      : movies.filter(movie => movie.genre_ids.includes(selectedGenreId));
     onGenreChange(filteredMovies);
   }
 

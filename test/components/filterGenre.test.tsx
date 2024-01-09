@@ -7,17 +7,20 @@ interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
-  genre_id: number;
-  id: number;
+  genre_ids:number[];
+  id:number
+  vote_average:number;
+  vote_count:number;
+  overview:string 
 }
 
 export const byGenres: Movie[] = [
-  { id: 0, title: "All", poster_path: "", release_date: "", genre_id: 0 },
-  { id: 1, title: "Action", poster_path: "", release_date: "", genre_id: 28 },
-  { id: 2, title: "Adventure", poster_path: "", release_date: "", genre_id: 12 },
-  { id: 3, title: "Animation", poster_path: "", release_date: "", genre_id: 16 },
-  { id: 4, title: "Comedy", poster_path: "", release_date: "", genre_id: 35 },
-  { id: 5, title: "Crime", poster_path: "", release_date: "", genre_id: 80 },
+  { id: 0, title: "All", poster_path: "",vote_average:1, vote_count:1,release_date: "", genre_ids: [28], overview:'' },
+  { id: 1, title: "Action", poster_path: "",vote_average:1, vote_count:1,release_date: "", genre_ids: [28], overview:'' },
+  { id: 2, title: "Adventure", poster_path: "",vote_average:1, vote_count:1,release_date: "", genre_ids: [28], overview:'' },
+  { id: 3, title: "Animation", poster_path: "",vote_average:1, vote_count:1,release_date: "", genre_ids: [28], overview:'' },
+  { id: 4, title: "Comedy", poster_path: "",vote_average:1, vote_count:1,release_date: "", genre_ids: [28], overview:'' },
+  { id: 5, title: "Crime", poster_path: "",vote_average:1, vote_count:1,release_date: "", genre_ids: [28], overview:'' },
 ];
 
 describe("FiltersGenre", () => {
