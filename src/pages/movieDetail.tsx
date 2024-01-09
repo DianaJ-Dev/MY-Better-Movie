@@ -1,8 +1,15 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { byGenres} from '../components/filterGenre';
 import styles from "../movies.module.css";
 
+const byGenres = [
+  { "id": 0, "name": "All" },
+  { "id": 28, "name": "Action" },
+  { "id": 12, "name": "Adventure" },
+  { "id": 16, "name": "Animation" },
+  { "id": 35, "name": "Comedy" },
+  { "id": 80, "name": "Crime" }
+];
 
 interface Movie {
   title: string;
@@ -12,9 +19,7 @@ interface Movie {
   id:number
   vote_average:number;
   vote_count:number;
-  overview:string
-  
-
+  overview:string 
 }
 interface MovieDetailProps {
   movies: Movie[];

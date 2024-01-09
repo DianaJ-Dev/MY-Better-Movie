@@ -7,13 +7,12 @@ interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
-  genre_ids: number[];
-  id: number;
-  vote_average: number;
-  vote_count: number;
-  overview: string;
+  genre_ids:number[];
+  id:number
+  vote_average:number;
+  vote_count:number;
+  overview:string 
 }
-
 const orderAlphabetic: Movie[] = [
   { id: 1, title: "A Man of Reason", poster_path: "",vote_average:1, vote_count:1,release_date: "", genre_ids: [28], overview:'' },
   { id: 2, title: "Fast X", poster_path: "",vote_average:1, vote_count:1,release_date: "", genre_ids: [28], overview:'' },
