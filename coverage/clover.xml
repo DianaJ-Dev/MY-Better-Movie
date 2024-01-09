@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <coverage generated="1704840914374" clover="3.2.0">
   <project timestamp="1704840914374" name="All files">
     <metrics statements="80" coveredstatements="67" conditionals="12" coveredconditionals="7" methods="25" coveredmethods="18" elements="117" coveredelements="92" complexity="0" loc="80" ncloc="80" packages="3" files="6" classes="6"/>
+=======
+<coverage generated="1703101584438" clover="3.2.0">
+  <project timestamp="1703101584439" name="All files">
+    <metrics statements="80" coveredstatements="67" conditionals="12" coveredconditionals="7" methods="25" coveredmethods="18" elements="117" coveredelements="92" complexity="0" loc="80" ncloc="80" packages="3" files="6" classes="6"/>
+
+>>>>>>> 67d25147b572d315e0d7002a3c5cb7c4fe840096
     <package name="src">
       <metrics statements="29" coveredstatements="26" conditionals="3" coveredconditionals="1" methods="10" coveredmethods="7"/>
       <file name="movies.tsx" path="C:\Users\Asus\Documents\Laboratoria\Proyecto 5\My-Better-Movie\src\movies.tsx">
@@ -39,6 +46,10 @@
     </package>
     <package name="src.components">
       <metrics statements="36" coveredstatements="36" conditionals="6" coveredconditionals="6" methods="11" coveredmethods="11"/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 67d25147b572d315e0d7002a3c5cb7c4fe840096
       <file name="alphabeticOrder.tsx" path="C:\Users\Asus\Documents\Laboratoria\Proyecto 5\My-Better-Movie\src\components\alphabeticOrder.tsx">
         <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
         <line num="1" count="2" type="stmt"/>
@@ -58,6 +69,7 @@
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
+<<<<<<< HEAD
         <line num="31" count="2" type="stmt"/>
         <line num="34" count="4" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
@@ -67,6 +79,17 @@
         <line num="41" count="2" type="stmt"/>
         <line num="44" count="4" type="stmt"/>
         <line num="49" count="24" type="stmt"/>
+=======
+        <line num="32" count="2" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="39" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="6" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="50" count="24" type="stmt"/>
+>>>>>>> 67d25147b572d315e0d7002a3c5cb7c4fe840096
       </file>
       <file name="movieItem.tsx" path="C:\Users\Asus\Documents\Laboratoria\Proyecto 5\My-Better-Movie\src\components\movieItem.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -95,6 +118,7 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
+<<<<<<< HEAD
         <line num="5" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
@@ -107,6 +131,20 @@
         <line num="40" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
+=======
+        <line num="4" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="34" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+>>>>>>> 67d25147b572d315e0d7002a3c5cb7c4fe840096
       </file>
     </package>
   </project>

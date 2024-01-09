@@ -21,6 +21,7 @@ interface Movie {
   vote_count:number;
   overview:string 
 }
+
 interface GenreProps {
   movies: Movie[];
   onGenreChange: (filteredMovies: Movie[]) => void;

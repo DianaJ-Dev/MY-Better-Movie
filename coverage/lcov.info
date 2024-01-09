@@ -91,10 +91,17 @@ BRH:2
 end_of_record
 TN:
 SF:src\components\filterGenre.tsx
+<<<<<<< HEAD
 FN:31,(anonymous_1)
 FN:34,(anonymous_2)
 FN:40,(anonymous_3)
 FN:48,(anonymous_4)
+=======
+FN:32,(anonymous_1)
+FN:35,(anonymous_2)
+FN:41,(anonymous_3)
+FN:49,(anonymous_4)
+>>>>>>> 67d25147b572d315e0d7002a3c5cb7c4fe840096
 FNF:4
 FNH:4
 FNDA:4,(anonymous_1)
@@ -104,6 +111,7 @@ FNDA:24,(anonymous_4)
 DA:1,2
 DA:2,2
 DA:5,2
+<<<<<<< HEAD
 DA:31,2
 DA:34,4
 DA:35,2
@@ -119,6 +127,23 @@ BRDA:38,0,0,1
 BRDA:38,0,1,1
 BRDA:47,1,0,4
 BRDA:47,1,1,4
+=======
+DA:32,2
+DA:35,4
+DA:36,2
+DA:37,2
+DA:39,2
+DA:41,6
+DA:42,2
+DA:45,4
+DA:50,24
+LF:12
+LH:12
+BRDA:39,0,0,1
+BRDA:39,0,1,1
+BRDA:48,1,0,4
+BRDA:48,1,1,4
+>>>>>>> 67d25147b572d315e0d7002a3c5cb7c4fe840096
 BRF:4
 BRH:4
 end_of_record
@@ -161,10 +186,17 @@ BRH:0
 end_of_record
 TN:
 SF:src\pages\movieDetail.tsx
+<<<<<<< HEAD
 FN:28,(anonymous_1)
 FN:29,(anonymous_2)
 FN:37,(anonymous_3)
 FN:44,(anonymous_4)
+=======
+FN:23,(anonymous_1)
+FN:24,(anonymous_2)
+FN:32,(anonymous_3)
+FN:39,(anonymous_4)
+>>>>>>> 67d25147b572d315e0d7002a3c5cb7c4fe840096
 FNF:4
 FNH:0
 FNDA:0,(anonymous_1)
@@ -174,6 +206,7 @@ FNDA:0,(anonymous_4)
 DA:1,1
 DA:2,1
 DA:3,1
+<<<<<<< HEAD
 DA:5,1
 DA:28,1
 DA:29,0
@@ -191,6 +224,25 @@ LH:5
 BRDA:39,0,0,0
 BRDA:54,1,0,0
 BRDA:54,1,1,0
+=======
+DA:4,1
+DA:23,1
+DA:24,0
+DA:25,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:32,0
+DA:34,0
+DA:35,0
+DA:39,0
+DA:41,0
+LF:15
+LH:5
+BRDA:34,0,0,0
+BRDA:49,1,0,0
+BRDA:49,1,1,0
+>>>>>>> 67d25147b572d315e0d7002a3c5cb7c4fe840096
 BRF:3
 BRH:0
 end_of_record
