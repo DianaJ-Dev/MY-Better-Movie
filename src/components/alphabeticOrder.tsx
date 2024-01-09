@@ -6,8 +6,11 @@
   title: string;
   poster_path: string;
   release_date: string;
-  genre_id:number
-  id:number
+  genre_ids: number[];
+  id: number;
+  vote_average: number;
+  vote_count: number;
+  overview: string;
 }
 
  interface Order {

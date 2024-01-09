@@ -1,0 +1,104 @@
+[33mcommit 1d5fbf8ece115a9ff269a6b25c7c0d57bbe7f0f2[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/HitoThree[m[33m, [m[1;31morigin/feature/HitoThree[m[33m)[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Tue Dec 19 13:38:22 2023 -0500
+
+    css completo
+
+[33mcommit 52e41a9813e745b07ac140c4eec9af26a823e9c1[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Tue Dec 19 00:38:34 2023 -0500
+
+    cambios vista genero y cambios css
+
+[33mcommit 2e8992ce33ac8f3082b3374de8733f8a1cf2f21a[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Fri Dec 15 21:33:27 2023 -0500
+
+     Muestra detalle de peliculas
+
+[33mcommit 64801d0215c8a8a54f486200d034d30e12aeb3a7[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Thu Dec 14 19:44:37 2023 -0500
+
+    Contiene informacion de detalle de peliculas pero no funciona el click
+
+[33mcommit 5ec0389f2b765d181f548513dedb25e1c6499ecc[m[33m ([m[1;31morigin/feature/HitoTwo[m[33m, [m[1;32mfeature/HitoTwo[m[33m)[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Tue Dec 12 14:21:16 2023 -0500
+
+    Cambios css
+
+[33mcommit bfbe029441b68dce759f981acace3cd77b901911[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Thu Dec 7 17:36:23 2023 -0500
+
+    Contiene Boton de ordenar
+
+[33mcommit 2a3246d6cd509514308a16214471b74475616d3e[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Wed Dec 6 16:13:08 2023 -0500
+
+    fitrado por genero sin test
+
+[33mcommit c83342f602b2d688d0d3c12644191cb499a05af7[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Tue Dec 5 21:25:34 2023 -0500
+
+    trae filtros pero no se carga de nuevo la base para volver a buscar
+
+[33mcommit aee2da72dfa5cf2a3719bad5a14431d350794012[m
+Merge: 9773847 8b34d43
+Author: Diana Julieth Matamoros Vargas <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Fri Dec 1 17:54:02 2023 -0500
+
+    Merge pull request #5 from DianaJ-Dev/feature/Hito-one
+    
+    Usuario puede ver lista de películas con la paginación, incluye test (Hito uno)
+
+[33mcommit 8b34d4369d5091c47a5c1364242bb2e5aadbc7b8[m[33m ([m[1;31morigin/feature/Hito-one[m[33m, [m[1;32mfeature/Hito-one[m[33m)[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Fri Dec 1 17:50:37 2023 -0500
+
+    Contiene test del Hito uno
+
+[33mcommit ce3af5d3bef0f9320a06de4e2afca93eac02f467[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Thu Nov 30 17:02:06 2023 -0500
+
+    se traen peliculas por cada peticion de pagina
+
+[33mcommit 26a99f6fe8f1f4ec18b78fed086bb6e701de8d1d[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Wed Nov 29 20:50:58 2023 -0500
+
+    modularizacion entre movie y paginacion
+
+[33mcommit 00a5f2743533391ecfb2049485c29dcd9d893af1[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Tue Nov 28 22:13:07 2023 -0500
+
+    primer test
+
+[33mcommit 3e0fd96560935bb039a2117e951860842abfcd1a[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Sat Nov 25 21:14:04 2023 -0500
+
+     Catalogo de peliculas con paginacion completa
+
+[33mcommit 6e0fd20f8a97ea63d5c5d787878905cdcca5f35e[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Sat Nov 25 00:22:31 2023 -0500
+
+    paginacion sin css
+
+[33mcommit dec4631ea039d34b60665302dcc4f430a3110cd9[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Fri Nov 24 20:58:19 2023 -0500
+
+    nueva rama
+
+[33mcommit 9773847f7a647523e0b050662351004831f55315[m
+Author: DianaJ-Dev <134237911+DianaJ-Dev@users.noreply.github.com>
+Date:   Fri Nov 24 20:27:57 2023 -0500
+
+    me trae las apo de peliculas

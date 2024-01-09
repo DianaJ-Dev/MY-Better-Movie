@@ -3,16 +3,22 @@ import { ShowPaginated } from "./components/showPaginated";
 import styles from "./movies.module.css";
 import { MovieItem } from "./components/movieItem";
 import { FiltersGenre } from "./components/filterGenre";
-import {AlphabeticOrder} from "./components/alphabeticOrder"
+import {AlphabeticOrder} from "./components/alphabeticOrder";
+import { MovieDetail } from "./pages/movieDetail";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
-// Interfaz TypeScript que describe la estructura de objetos
+// Interfaz TypeScript que describe la estructura de objeto
+
 interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
-  genre_id:number
-  id:number
+  genre_ids: number[];
+  id: number;
+  vote_average: number;
+  vote_count: number;
+  overview: string;
 }
 
 
@@ -21,7 +27,7 @@ export const Movies = () => {
   const [currentPage, setCurrentPage] = useState(1); // Actualiza el valor de las paginas
   const [selectedGenre, setSelectedGenre] = useState<string | undefined | null>();
   const [selectOrder, setSelectOrder] = useState<string>();
-  
+
   
   const handleGenreChange = (filteredMovies: Movie[] )  => {
     setMovies(filteredMovies);
@@ -38,7 +44,7 @@ export const Movies = () => {
     const initialUrl = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&with_genres=${with_genres}&api_key=a96958b664d1a603a39c9d2064867790`;
 
     fetch(initialUrl)
-      .then((response) => response.json())
+      .then((response) => response.json()) //Convierte los datos en un objecto de js
       .then((data: { results: Movie[] }) => 
       
       setMovies(order== 'asc'?
@@ -49,15 +55,17 @@ export const Movies = () => {
 
   // Nueva solicitud cada  vez que cambia la pelicula
   useEffect(() => {
-    
     movieFetch(currentPage,selectedGenre,selectOrder);
-  }, [currentPage,selectedGenre, selectOrder, movies]);
+  }, [currentPage,selectedGenre, selectOrder]);
+  
 
 
   return (
-    <div >
-      <h1> My Better Movie</h1>
-      <div className={styles.buttonContainer}>
+    <BrowserRouter>
+      <div>
+        <h1>My Better Movie</h1>
+        <div className={styles.buttonContainer}>
+      
       <FiltersGenre
         movies={movies}
         onGenreChange={handleGenreChange}
@@ -71,23 +79,32 @@ export const Movies = () => {
         setSelectOrder={setSelectOrder}
       />
       </div>
-  
-      <div className={styles.movies}>
-        {movies.map((movie) => (
-          <MovieItem
-            key={movie.id}
-            title={movie.title}
-            poster_path={movie.poster_path}
-            release_date={movie.release_date}
-          />
-        ))}
-        
-        <ShowPaginated
-          movies={movies}
-          setCurrentPage={setCurrentPage}
-          selected={currentPage}
-        />
+
+        <div className={styles.movies} data-testid="movies-component">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  {movies.map((movie) => (
+                    <Link key={movie.id} to={`/movieDetail/${movie.id}`}>
+                      <MovieItem
+                        key={movie.id}
+                        title={movie.title}
+                        poster_path={movie.poster_path}
+                        release_date={movie.release_date}
+                        id={movie.id}
+                      />
+                    </Link>
+                  ))}
+                  <ShowPaginated movies={movies} setCurrentPage={setCurrentPage} selected={currentPage} />
+                </>
+              }
+            />
+            <Route path="/movieDetail/:id" element={<MovieDetail movies={movies} />} />
+          </Routes>
+        </div>
       </div>
-    </div>
-  )
-  }
+    </BrowserRouter>
+  );
+};

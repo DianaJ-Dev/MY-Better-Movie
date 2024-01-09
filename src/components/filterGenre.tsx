@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from "../movies.module.css"
 
-const byGenres = [
+
+export const byGenres = [
   { "id": 0, "name": "All" },
   { "id": 28, "name": "Action" },
   { "id": 12, "name": "Adventure" },
@@ -14,9 +15,13 @@ interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
-  genre_id:number;
-  id:number
+  genre_ids: number[];
+  id: number;
+  vote_average: number;
+  vote_count: number;
+  overview: string;
 }
+
 interface GenreProps {
   movies: Movie[];
   onGenreChange: (filteredMovies: Movie[]) => void;
@@ -27,13 +32,13 @@ interface GenreProps {
 export const FiltersGenre = ({ movies,  onGenreChange, setSelectedGenre, selectedGenre }: GenreProps) => {
   
 
-  const handleGenreChange = (event: React.ChangeEvent<HTMLSelectElement>) => { 
+  const handleGenreChange = (event: React.ChangeEvent<HTMLSelectElement>) => { // se ejecuta cuando cambia el valor de select
     const selectedGenreId = parseInt(event.target.value); //(parseInt) convierte cadena en numero
     setSelectedGenre(selectedGenreId.toString()) // (toString()) convierte valores numericos en string
     
     const filteredMovies = selectedGenreId === 0
       ? movies
-      : movies.filter(movie => movie.genre_id === selectedGenreId);
+      : movies.filter(movie => movie.genre_ids.includes(selectedGenreId));
     onGenreChange(filteredMovies);
   }
 
