@@ -1,5 +1,5 @@
 :root {
-  background-color: #16395C;
+  background-color: #111112;
 }
 /* titulo*/
 h1{
@@ -99,9 +99,10 @@ h1{
 /*detalle de pelicula*/
 .back{
   background-color: #DB9E21;
-  margin-left: 87%;
-  width: 150px;
+  margin-left: 90%;
+  width: 100px;
   height: 30px;
+  border-radius: 10px;
   
 }
 .tittleDetail{
