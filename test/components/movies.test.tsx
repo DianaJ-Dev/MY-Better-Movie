@@ -5,20 +5,6 @@ import { render, waitFor, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Movies} from "../../src/movies";
 
-/* interface Movie {
-  title: string;
-  poster_path: string;
-  release_date: string;
-  genre_id:number;
-  id:number
-}
-interface GenreProps {
-  movies: Movie[];
-  onGenreChange: (filteredMovies: Movie[]) => void;
-  setSelectedGenre: (genre: string | null) => void;
-  selectedGenre?: string | null ;
-} */
-
 
 declare const global: any;
 
@@ -54,21 +40,5 @@ describe("Movies", () => {
       expect(screen.getByText(item.release_date)).toBeInTheDocument();
     });
   });
-
-  /* it("Debe actualizar las películas con el valor recibido", async () => {
-    let capturedFilteredMovies: Movie[] | null = null;
-  
-    const handleGenreChange = (filteredMovies: Movie[]) => {
-      capturedFilteredMovies = filteredMovies;
-    };
-  
-    const { getByTestId } = render(<Movies onGenreChange={handleGenreChange} />);
-  
-    fireEvent.change(getByTestId('movies-component'), byGenres);
-  
-    await waitFor(() => {
-      expect(capturedFilteredMovies).toEqual(byGenres);
-    }); 
-  });*/
 
 });

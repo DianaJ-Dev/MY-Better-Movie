@@ -40,7 +40,7 @@ export const Movies = () => {
   };
   
 
-  const movieFetch = (page: number,with_genres: string | null | undefined, order:string | undefined, input:string) => {
+  const movieFetch = (page: number,with_genres: string | null | undefined, order:string | undefined) => {
     if(with_genres === '0') with_genres = null 
 
     const initialUrl = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&with_genres=${with_genres}&api_key=a96958b664d1a603a39c9d2064867790`;
@@ -57,7 +57,7 @@ export const Movies = () => {
 
   // Nueva solicitud cada  vez que cambia la pelicula
   useEffect(() => {
-    movieFetch(currentPage, selectedGenre, selectOrder, input);
+    movieFetch(currentPage, selectedGenre, selectOrder);
   }, [currentPage, selectedGenre, selectOrder, input]);
 
   return (
@@ -80,7 +80,6 @@ export const Movies = () => {
       />
 
       <SearchMovie
-      movies={movies}
       setInput={setInput}
       setMovies={setMovies}
       input={input}

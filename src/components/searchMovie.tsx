@@ -1,20 +1,35 @@
 import React from "react";
+import styles from "../movies.module.css"
 
-export const SearchMovie = ({ movies, setMovies, input, setInput }) => {
+interface Movie {
+  title: string;
+  poster_path: string;
+  release_date: string;
+  genre_ids:number[];
+  id:number
+  vote_average:number;
+  vote_count:number;
+  overview:string 
+}
+
+interface InputProps{
+  setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
+  input:string 
+  setInput: React.Dispatch<React.SetStateAction<string>>;
+}
+export const SearchMovie:React.FC<InputProps>  = ({ setMovies, input, setInput } : InputProps) => {
   
-  const onInputChange = async (event) => {
-    const inputValue = event.target.value;
+  const onInputChange = async (data:React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = data.target.value;
     setInput(inputValue);
 
     // Obtener resultados de búsqueda en tiempo real
     const searchResults = await searchMovies(inputValue);
 
-    // Actualizar el estado con las películas filtradas
     setMovies(searchResults);
   }
 
-  const searchMovies = async (query) => {
-    // Realizar una nueva solicitud a la API para obtener resultados de búsqueda
+  const searchMovies = async (query:string) => {
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?include_adult=false&include_video=false&language=en-US&page=1&query=${query}&api_key=a96958b664d1a603a39c9d2064867790`);
     const data = await response.json();
     return data.results;
@@ -23,7 +38,7 @@ export const SearchMovie = ({ movies, setMovies, input, setInput }) => {
   return (
     <div>
       <form>
-        <input
+        <input className={styles.searchmovie}
           type="text"
           placeholder='Search movie'
           value={input}
