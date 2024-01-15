@@ -26,13 +26,14 @@ interface MovieDetailProps {
 }
 
 export const MovieDetail: React.FC<MovieDetailProps> = ({ movies }) => {
-  const handleGoBack = () => {
-    navigete(-1);
-  }
   
-  const navigete = useNavigate();
+  const navigate = useNavigate();
   const { id } = useParams();
   const includeImage = "https://image.tmdb.org/t/p/w200/";
+
+  const handleGoBack = () => {
+    navigate(-1);
+  }
 
   const detail = movies.find((movie) => movie.id.toString() === id);
 
@@ -45,21 +46,21 @@ export const MovieDetail: React.FC<MovieDetailProps> = ({ movies }) => {
 
   return (
     <div className={styles.containerDetail} >
-      <button className={styles.back} onClick={handleGoBack}>Back</button>
+      <button className={styles.back} onClick={handleGoBack} data-testid="btnGetUsers">Back</button>
       <img className={styles.imgDetail} src={includeImage + detail.poster_path} alt={detail.title} />
       <div>
       <h4 className={styles.tittleDetail}>{detail.title}</h4>  
-      <h4 className={styles.info}>Fecha de lanzamiento: {detail.release_date}</h4>
+      <h4 className={styles.info}>Release date: {detail.release_date}</h4>
       <div className={styles.info}>
         {selectGenre ? (
-          <h4>Genero de película: {selectGenre.name}</h4>
+          <h4>Movie genre: {selectGenre.name}</h4>
         ) : (
-          <p>No se encontró genero</p>
+          <p>No gender found</p>
         )}
       </div>
       <p className={styles.p}>{detail.overview}</p>
-      <h4 className={styles.info}>Promedio de Votación: {detail.vote_average}</h4>
-      <h4 className={styles.info}>Total de Votos: {detail.vote_count}</h4>
+      <h4 className={styles.info}>Voting Average: {detail.vote_average}</h4>
+      <h4 className={styles.info}>Total Votes: {detail.vote_count}</h4>
       </div>
     </div>
   )
