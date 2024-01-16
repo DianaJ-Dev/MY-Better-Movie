@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# My Better Movie
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img width="600" alt="Número de links encontrados " src="https://github.com/DianaJ-Dev/MY-Better-Movie/blob/feature/HitoThree/img/Inicial.png">
 
-Currently, two official plugins are available:
+My Better Movie is a platform that provides you with the opportunity
+to easily and swiftly discover the most remarkable movies. With just
+one click on your chosen film, you can access details such as its
+rating, number of views, a brief summary, and its release date.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img width="600" alt="Número de links encontrados " src="https://github.com/DianaJ-Dev/MY-Better-Movie/blob/feature/HitoThree/img/Detalle.png">
 
-## Expanding the ESLint configuration
+The platform features filter buttons, allowing you to select movies
+based on your preferred genre or arrange them alphabetically.
+Additionally, it includes a user-friendly search engine that, with a
+single word, will display related movies.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<img width="600" alt="Número de links encontrados " src="https://github.com/DianaJ-Dev/MY-Better-Movie/blob/feature/HitoThree/img/Filtro.png">
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+If you're seeking a platform that offers convenience for enjoying
+the finest movies, My Better Movie is the ideal choice."

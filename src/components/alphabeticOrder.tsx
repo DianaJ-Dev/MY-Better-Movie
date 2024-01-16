@@ -36,11 +36,10 @@
 
   return (
     <div>
-      <label className={styles.titulouno}>Ordenar Alfabéticamente:</label>
+      <label className={styles.titulouno}>Order alphabetically:</label>
       <select className={styles.button} value={selectOrder} onChange={orderAlphabetic}>
-        <option value=''>Seleccionar</option>
-        <option value='asc'>A-Z</option>
         <option value='desc'>Z-A</option>
+        <option value='asc'>A-Z</option> 
       </select>
     </div>
   );
