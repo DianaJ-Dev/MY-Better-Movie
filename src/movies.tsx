@@ -26,7 +26,7 @@ interface Movie {
 export const Movies = () => {
   const [movies, setMovies] = useState<Movie[]>([]); // Actualiza el valor de estado de las peliculas  (desestructuración)
   const [currentPage, setCurrentPage] = useState(1); // Actualiza el valor de las paginas
-  const [selectedGenre, setSelectedGenre] = useState<string | undefined | null>();
+  const [selectedGenre, setSelectedGenre] = useState<string | undefined | null>('');
   const [selectOrder, setSelectOrder] = useState<string>();
   const [input, setInput] = useState('');
 
